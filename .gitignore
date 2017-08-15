@@ -1,0 +1,12 @@
+.tcc
+.idea
+.controle
+.directory
+*.sqlite3
+*.pyc
+__pycache__
+staticfiles
+.ipynb_checkpoints/
+tcc/core/migrations
+tcc/__pycache__/*
+tcc/core/__pycache__/*
