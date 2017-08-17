@@ -32,7 +32,7 @@ class Articles(models.Model):
     title = models.TextField("Titulo", max_length=50)
     text = RichTextField(config_name='full', verbose_name=u'Texto')
     published_data = models.DateField("Data publicação", auto_now=True)
-    author = models
+    author = models.ForeignKey(Authors, on_delete=models.DO_NOTHING, null=True, blank=True)
     hashtags = models.ManyToManyField(Hashtags)
 
 

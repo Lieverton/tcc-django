@@ -34,10 +34,16 @@ class UserAdmin(UserAdmin):
     def save_model(self, request, obj, form, change):
         if request.user.is_superuser:
             obj.is_staff = True
-            # group = Group.objects.get(name='publishers')
-            # group.user_set.add()
             obj.save()
 
+
+class ArticleAdmin(admin.ModelAdmin):
+
+
+
+    def save_model(self, request, obj, form, change):
+        obj.author = request.user
+        obj.save()
 
 
 admin.site.register(Hashtags)
